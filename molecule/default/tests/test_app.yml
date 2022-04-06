@@ -2,17 +2,17 @@
 
 file:
   {{ vector_bin_path }}:
-  
+
     owner: {{ vector_user }}
     group: {{ vector_group }}
-    
+
     exists: true
     filetype: directory
 
 service:
   vector:
     enabled: true
-    running: true 
+    running: true
 process:
   {{ vector_exec_name }}:
     running: true
