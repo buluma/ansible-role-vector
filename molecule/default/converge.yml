@@ -1,5 +1,5 @@
 ---
 - name: Converge
-  hosts: vector_group
+  hosts: all
   roles:
     - role: ansible-role-vector
