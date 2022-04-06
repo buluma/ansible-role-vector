@@ -1,12 +1,12 @@
 ---
 
-- name: VECTOR | Ensure vector group
+- name: ensure vector group
   group:
     name: "{{ vector_group }}"
     system: yes
     state: present
 
-- name: VECTOR | Ensure vector user
+- name: ensure vector user
   user:
     name: "{{ vector_user }}"
     group: "{{ vector_group }}"
@@ -15,7 +15,7 @@
     shell: /usr/sbin/nologin
     createhome: no
 
-- name: VECTOR | Ensure skeleton paths
+- name: ensure skeleton paths
   file:
     dest: "{{ item }}"
     owner: "{{ vector_user }}"
@@ -24,13 +24,13 @@
   with_items:
     - "{{ vector_skeleton_paths }}"
 
-- name: VECTOR | Check vector version
+- name: check vector version
   command: "{{ vector_exec_name }} --version"
   register: vector_check
   changed_when: false
   ignore_errors: true
 
-- name: VECTOR | Download package
+- name: download package
   apt:
     deb: "{{ vector_deb_package }}"
   when: vector_force_reinstall or vector_check is failed or vector_version not in vector_check.stderr

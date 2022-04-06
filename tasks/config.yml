@@ -1,6 +1,6 @@
 ---
 
-- name: VECTOR | Configure vector
+- name: configure vector
   template:
     src: "{{ vector_config_template_path }}"
     dest: /etc/vector/vector.toml
