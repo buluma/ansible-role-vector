@@ -1,0 +1,48 @@
+---
+image: "buluma/github-action-molecule:4.0.6"
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: "tcp://docker:2375"
+  PY_COLORS: 1
+
+molecule:
+  script:
+    - image=${image} tag=${tag} molecule test
+  retry: 1
+  parallel:
+    matrix:
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+
+testing:
+  script:
+    - image=${image} tag=${tag} molecule test
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "testing"
+  retry: 1
+  parallel:
+    matrix:
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+
+galaxy:
+  script:
+    - ansible-galaxy role info buluma.vector
+
+role_testing:
+  script:
+    - image=${image} tag=${tag} ansible-galaxy install buluma.vector
+  retry: 1
+  parallel:
+    matrix:
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
