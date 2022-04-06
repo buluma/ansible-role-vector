@@ -11,6 +11,10 @@ exclude_paths:
   - ./.tox
   - ./.cache
 
+parseable: true
 skip_list:
   - experimental
   - fqcn-builtins
+  - '204'
+use_default_rules: true
+verbosity: 1
