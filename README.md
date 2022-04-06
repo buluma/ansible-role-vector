@@ -26,7 +26,7 @@ The default values for the variables are set in `defaults/main.yml`:
 
 ## General
 # Version
-vector_version: 0.10.0
+vector_version: 0.20.0
 vector_package_architecture: amd64
 
 # Deb
@@ -71,15 +71,6 @@ vector_data_dir: "/var/lib/vector"
 ## [Requirements](#requirements)
 
 - pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-vector/blob/main/requirements.txt).
-
-
-## [Context](#context)
-
-This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
-
-Here is an overview of related roles:
-
-![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-vector/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
