@@ -1,13 +1,13 @@
 ---
 
 - name: ensure vector group
-  group:
+  ansible.builtin.group:
     name: "{{ vector_group }}"
     system: yes
     state: present
 
 - name: ensure vector user
-  user:
+  ansible.builtin.user:
     name: "{{ vector_user }}"
     group: "{{ vector_group }}"
     groups: "{{ vector_groups | default('') }}"
@@ -16,7 +16,7 @@
     createhome: no
 
 - name: ensure skeleton paths
-  file:
+  ansible.builtin.file:
     dest: "{{ item }}"
     owner: "{{ vector_user }}"
     group: "{{ vector_group }}"
@@ -31,6 +31,6 @@
   ignore_errors: true
 
 - name: download package
-  apt:
+  ansible.builtin.apt:
     deb: "{{ vector_deb_package }}"
   when: vector_force_reinstall or vector_check is failed or vector_version not in vector_check.stderr
