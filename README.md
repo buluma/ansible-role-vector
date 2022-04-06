@@ -26,7 +26,7 @@ The default values for the variables are set in `defaults/main.yml`:
 
 ## General
 # Version
-vector_version: 0.20.0
+vector_version: 0.10.0
 vector_package_architecture: amd64
 
 # Deb
