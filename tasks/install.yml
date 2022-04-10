@@ -24,9 +24,9 @@
   with_items:
     - "{{ vector_skeleton_paths }}"
 
-- name: Check that the "{{ vector_bin_path }}{{ vector_exec_name }}" exists
+- name: Check that the "{{ vector_bin_path }}/{{ vector_exec_name }}" exists
   stat:
-    path: "{{ vector_bin_path }}{{ vector_exec_name }}"
+    path: "{{ vector_bin_path }}/{{ vector_exec_name }}"
   register: vector_stat_result
 
 - name: check vector version
