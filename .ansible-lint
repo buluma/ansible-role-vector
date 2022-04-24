@@ -3,18 +3,10 @@
 # Ansible managed
 #
 exclude_paths:
-  - ./meta/preferences.yml
   - ./molecule/default/prepare.yml
   - ./molecule/default/converge.yml
+  - ./meta/preferences.yml
   - ./molecule/default/verify.yml
   - ./molecule/default/collections.yml
   - ./.tox
   - ./.cache
-
-parseable: true
-skip_list:
-  - experimental
-  - fqcn-builtins
-  - '204'
-use_default_rules: true
-verbosity: 1
