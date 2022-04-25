@@ -10,8 +10,8 @@
   notify: restart vector
 
 - name: configuring service
-  ansible.builtin.systemd:
+  ansible.builtin.service:
     name: vector
     state: "{{ vector_service_state }}"
     enabled: "{{ vector_service_enabled }}"
-    daemon_reload: yes
+    # daemon_reload: yes

@@ -2,30 +2,25 @@
 #
 # Ansible managed
 #
-
 dependency:
   name: galaxy
+  options:
+    role-file: requirements.yml
+    requirements-file: requirements.yml
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 driver:
   name: docker
-lint: |
-  yamllint .
-  ansible-lint .
 platforms:
-  - name: vector
-    groups:
-      - vector_group
-    image: ${MOLECULE_DISTRO:-debian:latest}
-    privileged: false
-    capabilities:
-      - SYS_ADMIN
-    tmpfs:
-      - /tmp
-      - /run
-      - /run/lock
+  - name: "vector-${image:-docker-ubuntu2104-ansible}-${tag:-latest}${TOX_ENVNAME}"
+    image: "${namespace:-buluma}/${image:-docker-ubuntu2104-ansible}:${tag:-latest}"
+    command: /sbin/init
     volumes:
-      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-    command: '/lib/systemd/systemd'
-    stop_signal: 'RTMIN+3'
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: yes
+    pre_build_image: yes
 provisioner:
   name: ansible
 verifier:
