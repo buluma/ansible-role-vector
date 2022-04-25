@@ -21,17 +21,16 @@
     owner: "{{ vector_user }}"
     group: "{{ vector_group }}"
     state: directory
-    mode: 0644
   with_items:
     - "{{ vector_skeleton_paths }}"
 
 - name: Check that the "{{ vector_bin_path }}/{{ vector_exec_name }}" exists
-  ansible.builtin.stat:
+  stat:
     path: "{{ vector_bin_path }}/{{ vector_exec_name }}"
   register: vector_stat_result
 
 - name: check vector version
-  ansible.builtin.command: "{{ vector_exec_name }} --version"
+  command: "{{ vector_exec_name }} --version"
   register: vector_check
   changed_when: false
   ignore_errors: true
