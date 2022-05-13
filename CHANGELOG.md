@@ -12,6 +12,10 @@
 
 - Add to tracker [\#1](https://github.com/buluma/ansible-role-vector/issues/1)
 
+**Merged pull requests:**
+
+- Revert "move to collections" [\#4](https://github.com/buluma/ansible-role-vector/pull/4) ([buluma](https://github.com/buluma))
+
 ## [v0.1.3](https://github.com/buluma/ansible-role-vector/tree/v0.1.3) (2022-04-10)
 
 [Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v0.1.2...v0.1.3)
