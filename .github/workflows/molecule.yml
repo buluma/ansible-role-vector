@@ -10,7 +10,7 @@ on:
   schedule:
     - cron: '43 22 * * *'
   workflow_dispatch:
-  push: {branches: ["master", "main", "testing"]}
+  push: {branches: ["master", "main"]}
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -40,22 +40,6 @@ jobs:
             tag: "latest"
           - image: "debian-systemd"
             tag: "bookworm"
-          - image: "debian-dev"
-            tag: "latest"
-          - image: "debian-systemd"
-            tag: "latest"
-          - image: "debian-systemd"
-            tag: "bullseye"
-          - image: "debian-systemd"
-            tag: "bookworm"
-          - image: "docker-debian11-ansible"
-            tag: "latest"
-          - image: "docker-debian10-ansible"
-            tag: "latest"
-          - image: "docker-debian9-ansible"
-            tag: "latest"
-          - image: "docker-debian8-ansible"
-            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3
