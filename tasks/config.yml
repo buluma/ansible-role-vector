@@ -1,6 +1,6 @@
 ---
 
-- name: configure vector
+- name: config | Configure vector
   ansible.builtin.template:
     src: "{{ vector_config_template_path }}"
     dest: /etc/vector/vector.toml

@@ -5,4 +5,4 @@
 repository:
   description: Vector Role
   homepage: https://buluma.github.io/
-  topics: vector, logging, monitoring, ansible, molecule, tox, playbook, hacktoberfest
+  topics: vector, logging, monitoring, ansible, molecule, tox, playbook

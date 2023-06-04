@@ -1,12 +1,12 @@
 ---
 
-- name: ensure vector group
+- name: install | Ensure vector group
   ansible.builtin.group:
     name: "{{ vector_group }}"
     system: yes
     state: present
 
-- name: ensure vector user
+- name: install | Ensure vector user
   ansible.builtin.user:
     name: "{{ vector_user }}"
     group: "{{ vector_group }}"
@@ -15,7 +15,7 @@
     shell: /usr/sbin/nologin
     createhome: no
 
-- name: ensure skeleton paths
+- name: install | Ensure skeleton paths
   ansible.builtin.file:
     dest: "{{ item }}"
     owner: "{{ vector_user }}"
@@ -24,19 +24,19 @@
   with_items:
     - "{{ vector_skeleton_paths }}"
 
-- name: Check that the "{{ vector_bin_path }}/{{ vector_exec_name }}" exists
+- name: install | Check that the "{{ vector_bin_path }}/{{ vector_exec_name }}" exists
   stat:
     path: "{{ vector_bin_path }}/{{ vector_exec_name }}"
   register: vector_stat_result
 
-- name: check vector version
+- name: install | Check vector version
   command: "{{ vector_exec_name }} --version"
   register: vector_check
   changed_when: false
   ignore_errors: true
   when: vector_stat_result.stat.exists
 
-- name: download package
+- name: install | Download package
   ansible.builtin.apt:
     deb: "{{ vector_deb_package }}"
   when: vector_force_reinstall or vector_check is failed or not vector_stat_result.stat.exists

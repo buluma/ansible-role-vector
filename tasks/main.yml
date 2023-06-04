@@ -1,16 +1,16 @@
 ---
 
-- name: install vector
+- name: Install vector
   include: install.yml
   tags:
     - vector_install
 
-- name: configure vector
+- name: Configure vector
   include: config.yml
   tags:
     - vector_configure
 
-- name: service configuration
+- name: Service configuration
   include: service.yml
   tags:
     - vector_service
