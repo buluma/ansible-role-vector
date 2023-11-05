@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: ansible-lint
         uses: ansible-community/ansible-lint-action@main
   test:
@@ -42,9 +42,11 @@ jobs:
         config:
           - image: "debian-systemd"
             tag: "latest"
+          - image: "debian-systemd"
+            tag: "bullseye"
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: "${{ github.repository }}"
       - name: disable apparmor for mysql
@@ -52,7 +54,7 @@ jobs:
       - name: parse apparmor for mysql
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
-        uses: buluma/molecule-action@v5.0.7
+        uses: buluma/molecule-action@v5.0.9
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
