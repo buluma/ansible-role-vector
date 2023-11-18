@@ -1,4 +1,4 @@
-# [vector](#vector)
+# [Ansible role vector](#vector)
 
 Vector Role
 
