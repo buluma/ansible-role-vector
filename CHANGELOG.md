@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-vector/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v0.1.4...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#12](https://github.com/buluma/ansible-role-vector/issues/12)
+- Update action [\#11](https://github.com/buluma/ansible-role-vector/issues/11)
+
 ## [v0.1.4](https://github.com/buluma/ansible-role-vector/tree/v0.1.4) (2022-05-13)
 
 [Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v0.1.3...v0.1.4)
