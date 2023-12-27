@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#15](https://github.com/buluma/ansible-role-vector/issues/15)
 - Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#12](https://github.com/buluma/ansible-role-vector/issues/12)
 - Update action [\#11](https://github.com/buluma/ansible-role-vector/issues/11)
 
