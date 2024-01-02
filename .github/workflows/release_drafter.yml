@@ -12,6 +12,9 @@ on:
       - master
       - main
       - testing
+    paths-ignore:
+      - '**/README.md'
+      - '**/CHANGELOG.md'
   # pull_request event is required only for autolabeler
   pull_request:
     # Only following types are handled by the action, but one can default to all as well
@@ -39,13 +42,13 @@ jobs:
 
     steps:
       - name: Checkout dj-wasabi-release repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dj-wasabi/dj-wasabi-release
           path: dj-wasabi-release
 
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: master
 
