@@ -1,16 +1,19 @@
 ---
 
 - name: Install vector
-  include: install.yml
+  ansible.builtin.import_tasks:
+    file: install.yml
   tags:
     - vector_install
 
 - name: Configure vector
-  include: config.yml
+  ansible.builtin.import_tasks:
+    file: config.yml
   tags:
     - vector_configure
 
 - name: Service configuration
-  include: service.yml
+  ansible.builtin.import_tasks:
+    file: service.yml
   tags:
     - vector_service

@@ -25,12 +25,12 @@
     - "{{ vector_skeleton_paths }}"
 
 - name: install | Check that the "{{ vector_bin_path }}/{{ vector_exec_name }}" exists
-  stat:
+  ansible.builtin.stat:
     path: "{{ vector_bin_path }}/{{ vector_exec_name }}"
   register: vector_stat_result
 
 - name: install | Check vector version
-  command: "{{ vector_exec_name }} --version"
+  ansible.builtin.command: "{{ vector_exec_name }} --version"
   register: vector_check
   changed_when: false
   ignore_errors: true
