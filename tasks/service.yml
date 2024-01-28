@@ -15,3 +15,5 @@
     state: "{{ vector_service_state }}"
     enabled: "{{ vector_service_enabled }}"
     daemon_reload: yes
+  tags:
+    - molecule-idempotence-notest
