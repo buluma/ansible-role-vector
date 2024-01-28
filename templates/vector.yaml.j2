@@ -1,0 +1,25 @@
+#                                    __   __  __
+#                                    \ \ / / / /
+#                                     \ V / / /
+#                                      \_/  \/
+#
+#                                    V E C T O R
+#                                   Configuration
+#
+# ------------------------------------------------------------------------------
+# Website: https://vector.dev
+# Docs: https://vector.dev/docs/
+# ------------------------------------------------------------------------------
+
+data_dir: "/var/lib/vector"
+
+sources:
+    in_yml:
+        type: stdin
+
+sinks:
+    out_yml:
+        inputs: [in_yml]
+        type: console
+        encoding:
+            codec: text

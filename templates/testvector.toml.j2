@@ -1,0 +1,38 @@
+{% for application in vector_parser_config %}
+# Input data. Change me to a valid input source.
+[sources.{{ application.name }}]
+  include = [ "{{ application.path_log }}" ]
+  type = "file"
+  start_at_beginning = true
+
+[transforms.{{ application.name }}_parser]
+  inputs = ["{{ application.name }}"]
+  type = "remap"
+  source = """{{ application.parse_vrl }}"""
+
+[sinks.{{ application.name }}_output]
+  inputs = ["{{ application.name }}_parser"]
+  type     = "console"
+  encoding.codec = "text"
+
+[[tests]]
+  name = "check_simple_log"
+
+  [[tests.inputs]]
+    insert_at = "{{ application.name }}_parser"
+    type = "raw"
+    value = "2020-11-26T12:00:00+00:00 info Message for testing"
+
+  [[tests.outputs]]
+    extract_from = "{{ application.name }}_parser"
+
+    [[tests.outputs.conditions]]
+      type = "vrl"
+      source = '''
+      assert!(is_timestamp(.timestamp), "2020-11-26T12:00:00z")
+      assert!(is_string(.new_field), "Value in fake field")
+      assert!(!exists(.level))
+      assert!(is_string(.message), "Message for testing")
+      '''
+
+{% endfor %}
