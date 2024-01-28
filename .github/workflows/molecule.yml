@@ -51,6 +51,12 @@ jobs:
             tag: "latest"
           - image: "debian-systemd"
             tag: "bullseye"
+          - image: "docker-ubuntu-systemd"
+            tag: "latest"
+          - image: "docker-ubuntu-systemd"
+            tag: "focal"
+          - image: "docker-ubuntu-systemd"
+            tag: "bionic"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4
