@@ -1,6 +1,6 @@
 ---
 
-- name: Copy daemon script
+- name: service | Copy daemon script
   ansible.builtin.template:
     src: "{{ vector_service_template_path }}"
     dest: /etc/systemd/system/vector.service
@@ -9,7 +9,7 @@
     group: root
   notify: Restart vector
 
-- name: Configure service
+- name: service | Configure service
   ansible.builtin.systemd:
     name: vector
     state: "{{ vector_service_state }}"

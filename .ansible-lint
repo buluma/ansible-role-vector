@@ -14,6 +14,7 @@ exclude_paths:
 
 skip_list:
   - yaml[truthy]
+  - risky-file-permissions
 
 enable_list:
   - name[prefix]
