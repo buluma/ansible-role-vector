@@ -8,7 +8,7 @@ file:
 service:
   vector:
     enabled: true
-    running: true
+    running: true 
 process:
   {{ vector_exec_name }}:
     running: true

@@ -1,3 +1,12 @@
 ---
-
-vector_config_template_path: "testvector.toml.j2"
+vector_version: 0.29.1
+vector_config_template_path: "{{ playbook_dir }}/templates/"
+vector_config_files:  # https://vector.dev/docs/reference/configuration/#multiple-files
+  - "{{ vector_config_path }}/*.toml"
+  - "{{ vector_config_path }}/vector.yaml"
+# vector_configs_folder: "{{ vector_config_path }}"  # https://vector.dev/docs/reference/configuration/#automatic-namespacing
+vector_parser_config:
+  - application:
+    name: "test"
+    path_log: "/var/log/vector"
+    parse_vrl: ". = parse_grok!(.message, \"%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} %{GREEDYDATA:message}\")\\n.new_field = \"Value in fake field\"\\ndel(.level)\\n.timestamp = to_timestamp!(.timestamp)"

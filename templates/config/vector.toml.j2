@@ -11,15 +11,17 @@
 # Docs: https://vector.dev/docs/
 # ------------------------------------------------------------------------------
 
-data_dir: "/var/lib/vector"
+# Note: A full config spec is located at ./vector.spec.toml and examples
+#       in the ./examples folder.
 
-sources:
-    in_yml:
-        type: stdin
+data_dir = "{{ vector_data_dir }}"
 
-sinks:
-    out_yml:
-        inputs: [in_yml]
-        type: console
-        encoding:
-            codec: text
+# Input data. Change me to a valid input source.
+[sources.in]
+  type = "stdin"
+
+# Output data
+[sinks.out]
+  inputs   = ["in"]
+  type     = "console"
+  encoding.codec = "text"
