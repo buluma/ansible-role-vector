@@ -1,12 +1,12 @@
 ---
 
-- name: restart vector
+- name: Restart vector
   ansible.builtin.systemd:
     name: vector
     state: restarted
   when: vector_service_state != 'stopped'
 
-- name: reload vector
+- name: Reload vector
   ansible.builtin.systemd:
     name: vector
     state: restart

@@ -7,4 +7,4 @@
     owner: "{{ vector_user }}"
     group: "{{ vector_group }}"
     mode: '0640'
-  notify: restart vector
+  notify: Restart vector
