@@ -3,7 +3,7 @@
 - name: install | Ensure vector group
   group:
     name: "{{ vector_group }}"
-    system: yes
+    system: true
     state: present
 
 - name: install | Ensure vector user
@@ -11,9 +11,9 @@
     name: "{{ vector_user }}"
     group: "{{ vector_group }}"
     groups: "{{ vector_groups | default('') }}"
-    system: yes
+    system: true
     shell: /usr/sbin/nologin
-    createhome: no
+    createhome: false
     append: True
 
 - name: install | Ensure skeleton paths

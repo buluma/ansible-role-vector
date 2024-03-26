@@ -13,7 +13,7 @@
 [sinks.{{ application.name }}_output]
   inputs = ["{{ application.name }}_parser"]
   type     = "console"
-  encoding.codec = "text" 
+  encoding.codec = "text"
 
 [[tests]]
   name = "check_simple_log"
