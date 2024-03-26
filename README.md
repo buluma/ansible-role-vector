@@ -25,8 +25,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -44,7 +44,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # https://github.com/idealista/vector_role/blob/main/.ansible-lint
 ## General
 # Version
-vector_version: 0.29.1
+vector_version: "0.29.1"
 vector_package_architecture: amd64
 
 # Deb
@@ -64,7 +64,7 @@ vector_skeleton_paths: "{{ vector_skeleton_paths_base + vector_skeleton_paths_ex
 
 ## Service options
 # Documentation
-vector_documentation_link: https://vector.dev/docs/about/what-is-vector/
+vector_documentation_link: "https://vector.dev/docs/about/what-is-vector/"
 
 # Owner
 vector_user: vector
