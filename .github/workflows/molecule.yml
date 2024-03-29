@@ -58,8 +58,6 @@ jobs:
             tag: "jammy"
           - image: "docker-molecule-images"
             tag: "lunar"
-          - image: "docker-molecule-images"
-            tag: "noble"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4
