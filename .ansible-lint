@@ -3,7 +3,6 @@
 # Ansible managed
 #
 exclude_paths:
-  - molecule/default/tests
   - molecule/default/prepare.yml
   - molecule/default/converge.yml
   - molecule/default/verify.yml
@@ -13,15 +12,5 @@ exclude_paths:
   - .github
   - requirements.yml
 
-skip_list:
-  - yaml[truthy]
-  - risky-file-permissions
-  - '204'
-  - fqcn[action-core]
-  - schema[moves]
-
 enable_list:
   - name[prefix]
-parseable: true
-use_default_rules: true
-verbosity: 1
