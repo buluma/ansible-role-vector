@@ -12,6 +12,7 @@ on:
       - main
       - testing
       - dependabot/**
+      # - renovate/**
     paths-ignore:
       - '**/README.md'
       - '**/CHANGELOG.md'
@@ -20,7 +21,8 @@ on:
   pull_request:
   pull_request_target:
   schedule:
-    - cron: '43 22 22/22 * *'
+    # - cron: '43 22 22 * *'
+    - cron: '43 22 * * *'
 
   workflow_dispatch:
 
@@ -34,10 +36,10 @@ jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout Role
+      - name: checkout
         uses: actions/checkout@v4
-      - name: Run Ansible-lint
-        uses: ansible/ansible-lint@v24.7.0
+      - name: ansible-lint
+        uses: ansible-community/ansible-lint-action@main
   test:
     needs:
       - lint
@@ -56,6 +58,8 @@ jobs:
             tag: "focal"
           - image: "docker-molecule-images"
             tag: "jammy"
+          - image: "docker-molecule-images"
+            tag: "lunar"
           - image: "docker-molecule-images"
             tag: "noble"
     steps:

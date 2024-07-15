@@ -31,7 +31,7 @@ vector_group: vector
 # vector_groups: []
 
 # Start on boot
-vector_service_enabled: true
+vector_service_enabled: True
 # Current state: started, stopped
 vector_service_state: started
 
