@@ -2,14 +2,10 @@
 galaxy_info:
   author: buluma
   role_name: vector
-  company: ShadowNet
-  description: Vector Role
-  min_ansible_version: "2.12"
+  description: 'Vector Role'
   license: Apache-2.0
-  galaxy_tags:
-    - vector
-    - logging
-    - monitoring
+  company: ShadowNet
+  min_ansible_version: 2.12
   platforms:
     - name: Debian
       versions:
@@ -17,4 +13,8 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
+  galaxy_tags:
+    - vector
+    - logging
+    - monitoring
 dependencies: []
