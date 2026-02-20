@@ -42,7 +42,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ```yaml
 ---
 # https://github.com/idealista/vector_role/blob/main/.ansible-lint
-## General
+# # General
 # Version
 vector_version: "0.29.1"
 vector_package_architecture: amd64
@@ -90,7 +90,7 @@ vector_service_template_path: "vector.service.j2"
 # vector_config_files:  # https://vector.dev/docs/reference/configuration/#multiple-files
 #   - "{{ vector_config_path }}/*.toml"
 #   - "{{ vector_config_path }}/*.yml"
-vector_configs_folder: "{{ vector_config_path }}"  # https://vector.dev/docs/reference/configuration/#automatic-namespacing
+vector_configs_folder: "{{ vector_config_path }}" # https://vector.dev/docs/reference/configuration/#automatic-namespacing
 
 vector_data_dir: "/var/lib/vector"
 # vector_syslog_identifier: vector
