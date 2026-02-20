@@ -1,5 +1,4 @@
 ---
-
 - name: Install vector
   ansible.builtin.import_tasks:
     file: install.yml

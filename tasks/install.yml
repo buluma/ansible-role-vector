@@ -1,5 +1,4 @@
 ---
-
 - name: install | Ensure vector group
   ansible.builtin.group:
     name: "{{ vector_group }}"
@@ -21,7 +20,7 @@
     dest: "{{ item }}"
     owner: "{{ vector_user }}"
     group: "{{ vector_group }}"
-    mode: '0755'
+    mode: "0755"
     state: directory
   with_items:
     - "{{ vector_skeleton_paths }}"

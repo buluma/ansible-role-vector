@@ -1,5 +1,4 @@
 ---
-
 - name: Restart vector
   ansible.builtin.systemd:
     name: vector
