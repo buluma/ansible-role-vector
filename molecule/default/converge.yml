@@ -1,6 +1,5 @@
----
-- name: Converge
+- gather_facts: false
   hosts: all
-  gather_facts: false
+  name: Converge
   roles:
-    - role: buluma.vector
+  - role: buluma.vector

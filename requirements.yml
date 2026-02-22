@@ -1,6 +1,5 @@
----
-roles:
-  - name: buluma.bootstrap
-  - name: buluma.ca_certificates
 collections:
-  - name: community.general
+- name: community.general
+roles:
+- name: buluma.bootstrap
+- name: buluma.ca_certificates

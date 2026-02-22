@@ -1,9 +1,7 @@
----
-- name: Prepare
-  hosts: all
-  become: true
+- become: true
   gather_facts: false
-
+  hosts: all
+  name: Prepare
   roles:
-    - role: buluma.bootstrap
-    - role: buluma.ca_certificates
+  - role: buluma.bootstrap
+  - role: buluma.ca_certificates

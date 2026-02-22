@@ -11,26 +11,23 @@ Vector Role
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-vector/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
----
-- name: Converge
+- gather_facts: false
   hosts: all
-  gather_facts: false
+  name: Converge
   roles:
-    - role: buluma.vector
+  - role: buluma.vector
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-vector/blob/master/molecule/default/prepare.yml):
 
 ```yaml
----
-- name: Prepare
-  hosts: all
-  become: true
+- become: true
   gather_facts: false
-
+  hosts: all
+  name: Prepare
   roles:
-    - role: buluma.bootstrap
-    - role: buluma.ca_certificates
+  - role: buluma.bootstrap
+  - role: buluma.ca_certificates
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -40,60 +37,29 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-vector/blob/master/defaults/main.yml):
 
 ```yaml
----
-# https://github.com/idealista/vector_role/blob/main/.ansible-lint
-# # General
-# Version
-vector_version: "0.29.1"
-vector_package_architecture: amd64
-
-# Deb
-vector_deb_package: "https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_{{ vector_package_architecture }}.deb"
-
-# Set true to force the download and installation of the package
-vector_force_reinstall: false
-
-# Paths
+vector_bin_path: /usr/bin/{{ vector_exec_name }}
+vector_config_path: /etc/vector
+vector_config_template_path: templates/config/
+vector_configs_folder: '{{ vector_config_path }}'
+vector_data_dir: /var/lib/vector
+vector_deb_package: https://packages.timber.io/vector/{{ vector_version }}/vector_{{
+  vector_version }}-1_{{ vector_package_architecture }}.deb
+vector_documentation_link: https://vector.dev/docs/about/what-is-vector/
+vector_env_path: /etc/default/vector
 vector_exec_name: vector
-vector_env_path: "/etc/default/vector"
-vector_bin_path: "/usr/bin/{{ vector_exec_name }}"
-vector_config_path: "/etc/vector"
-vector_skeleton_paths_base:
-  - "{{ vector_config_path }}"
-vector_skeleton_paths: "{{ vector_skeleton_paths_base + vector_skeleton_paths_extend | default([]) }}"
-
-## Service options
-# Documentation
-vector_documentation_link: "https://vector.dev/docs/about/what-is-vector/"
-
-# Owner
-vector_user: vector
+vector_force_reinstall: false
 vector_group: vector
-# Maybe you will need some extra groups for user vector
-# vector_groups: []
-
-# Start on boot
-vector_service_enabled: true
-# Current state: started, stopped
-vector_service_state: started
-
-# Logs
-# If wanted to output the logs to a file define the following variable
-# More information at https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=
 vector_log_output: journal
-# vector_log_output_stdout:
-# vector_log_output_stderr:
-
-vector_config_template_path: "templates/config/"
-vector_service_template_path: "vector.service.j2"
-
-# vector_config_files:  # https://vector.dev/docs/reference/configuration/#multiple-files
-#   - "{{ vector_config_path }}/*.toml"
-#   - "{{ vector_config_path }}/*.yml"
-vector_configs_folder: "{{ vector_config_path }}" # https://vector.dev/docs/reference/configuration/#automatic-namespacing
-
-vector_data_dir: "/var/lib/vector"
-# vector_syslog_identifier: vector
+vector_package_architecture: amd64
+vector_service_enabled: true
+vector_service_state: started
+vector_service_template_path: vector.service.j2
+vector_skeleton_paths: '{{ vector_skeleton_paths_base + vector_skeleton_paths_extend
+  | default([]) }}'
+vector_skeleton_paths_base:
+- '{{ vector_config_path }}'
+vector_user: vector
+vector_version: 0.29.1
 ```
 
 ## [Requirements](#requirements)

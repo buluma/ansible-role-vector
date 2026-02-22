@@ -1,18 +1,17 @@
 ---
 - name: service | Copy Daemon script
   ansible.builtin.template:
-    src: "{{ vector_service_template_path }}"
     dest: /etc/systemd/system/vector.service
+    group: root
     mode: "0644"
     owner: root
-    group: root
+    src: "{{ vector_service_template_path }}"
   notify: Restart vector
-
 - name: service | Configuring service
   ansible.builtin.systemd:
+    daemon_reload: true
+    enabled: "{{ vector_service_enabled }}"
     name: vector
     state: "{{ vector_service_state }}"
-    enabled: "{{ vector_service_enabled }}"
-    daemon_reload: true
   tags:
     - molecule-idempotence-notest
