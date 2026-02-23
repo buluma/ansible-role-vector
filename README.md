@@ -12,24 +12,24 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - gather_facts: false
-    hosts: all
-    name: Converge
-    roles:
-      - role: buluma.vector
+- gather_facts: false
+  hosts: all
+  name: Converge
+  roles:
+  - role: buluma.vector
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-vector/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - become: true
-    gather_facts: false
-    hosts: all
-    name: Prepare
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.ca_certificates
+- become: true
+  gather_facts: false
+  hosts: all
+  name: Prepare
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.ca_certificates
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -60,7 +60,7 @@ vector_service_template_path: vector.service.j2
 vector_skeleton_paths: "{{ vector_skeleton_paths_base + vector_skeleton_paths_extend
   | default([]) }}"
 vector_skeleton_paths_base:
-  - "{{ vector_config_path }}"
+- "{{ vector_config_path }}"
 vector_user: vector
 vector_version: 0.29.1
 ```
