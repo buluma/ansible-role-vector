@@ -1,11 +1,12 @@
+---
 issues:
   closeComment: false
   daysUntilClose: 7
   daysUntilStale: 90
   exemptLabels:
-  - pinned
-  - security
-  - good first issue
+    - pinned
+    - security
+    - good first issue
   markComment: 'This issue has been automatically marked as stale because it has not
     had recent activity. It will be closed if false further activity occurs. Thank
     you for your contributions.
