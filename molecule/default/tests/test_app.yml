@@ -1,6 +1,6 @@
 ---
 file:
-  {{vector_bin_path: null}: null}:
+  { { vector_bin_path: !!null "" }: !!null "" }:
     exists: true
     filetype: file
 
@@ -9,16 +9,16 @@ service:
     enabled: true
     running: true
 process:
-  {{vector_exec_name: null}: null}:
+  { { vector_exec_name: !!null "" }: !!null "" }:
     running: true
 user:
-  {{vector_user: null}: null}:
+  { { vector_user: !!null "" }: !!null "" }:
     exists: true
     groups:
-    - {{vector_group: null}: null}
+      - { { vector_group: !!null "" }: !!null "" }
     shell: /usr/sbin/nologin
 group:
-  {{vector_group: null}: null}:
+  { { vector_group: !!null "" }: !!null "" }:
     exists: true
 
 command:
@@ -26,7 +26,7 @@ command:
     exit-status: 0
     exec: "{{ vector_exec_name }} --version"
     stdout:
-    - "{{ vector_version }}"
+      - "{{ vector_version }}"
     stderr: []
     timeout: 10000
     skip: false
@@ -35,7 +35,7 @@ command:
     exit-status: 0
     exec: "vector test {{ vector_config_path }}/testvector.toml"
     stdout:
-    - "passed"
+      - "passed"
     stderr: []
     timeout: 10000
     skip: false
