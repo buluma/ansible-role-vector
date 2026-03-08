@@ -3,4 +3,4 @@
   hosts: all
   name: Converge
   roles:
-  - role: buluma.vector
+    - role: buluma.vector

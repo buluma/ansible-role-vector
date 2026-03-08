@@ -4,5 +4,5 @@
   hosts: all
   name: Prepare
   roles:
-  - role: buluma.bootstrap
-  - role: buluma.ca_certificates
+    - role: buluma.bootstrap
+    - role: buluma.ca_certificates
