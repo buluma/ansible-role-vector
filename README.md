@@ -45,8 +45,8 @@ vector_config_path: /etc/vector
 vector_config_template_path: templates/config/
 vector_configs_folder: "{{ vector_config_path }}"
 vector_data_dir: /var/lib/vector
-vector_deb_package: https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_{{ vector_package_architecture }}.deb
-vector_documentation_link: https://vector.dev/docs/about/what-is-vector/
+vector_deb_package: "https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_{{ vector_package_architecture }}.deb"
+vector_documentation_link: "https://vector.dev/docs/about/what-is-vector/"
 vector_env_path: /etc/default/vector
 vector_exec_name: vector
 vector_force_reinstall: false
@@ -60,7 +60,7 @@ vector_skeleton_paths: "{{ vector_skeleton_paths_base + vector_skeleton_paths_ex
 vector_skeleton_paths_base:
   - "{{ vector_config_path }}"
 vector_user: vector
-vector_version: 0.29.1
+vector_version: "0.29.1"
 ```
 
 ## [Requirements](#requirements)
@@ -108,3 +108,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
