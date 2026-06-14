@@ -1,5 +1,5 @@
 ---
-collections: []
+collections:
   - name: community.general
 roles:
   - name: buluma.bootstrap
