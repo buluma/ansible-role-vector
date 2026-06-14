@@ -1,13 +1,18 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-vector/tree/HEAD)
+## [v26.6.0](https://github.com/buluma/ansible-role-vector/tree/v26.6.0) (2026-06-14)
 
-[Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v24.3.31...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v24.3.31...v26.6.0)
 
 **Closed issues:**
 
 - Update action [\#14](https://github.com/buluma/ansible-role-vector/issues/14)
 - rebuild action [\#13](https://github.com/buluma/ansible-role-vector/issues/13)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#26](https://github.com/buluma/ansible-role-vector/pull/26) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#25](https://github.com/buluma/ansible-role-vector/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v24.3.31](https://github.com/buluma/ansible-role-vector/tree/v24.3.31) (2024-03-29)
 
