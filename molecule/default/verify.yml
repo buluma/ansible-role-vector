@@ -1,5 +1,6 @@
 ---
 - become: true
+- name: Verify
   hosts:
     - all
   name: Verify vector
@@ -22,7 +23,9 @@
     - name: Register test files
       register: test_files
       shell: ls {{ goss_test_directory }}/test_*.yml
+      changed_when: false
     - command: "{{ goss_dst }} -g {{ item }} validate --format {{ goss_format }}"
+    changed_when: false
       name: Execute Goss tests
       register: test_results
       with_items: "{{ test_files.stdout_lines }}"
