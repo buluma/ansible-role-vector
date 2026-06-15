@@ -1,6 +1,6 @@
 ---
 file:
-  { { vector_bin_path: !!null "" }: !!null "" }:
+  "{{ vector_bin_path }}":
     exists: true
     filetype: file
 
@@ -9,16 +9,16 @@ service:
     enabled: true
     running: true
 process:
-  { { vector_exec_name: !!null "" }: !!null "" }:
+  "{{ vector_exec_name }}":
     running: true
 user:
-  { { vector_user: !!null "" }: !!null "" }:
+  "{{ vector_user }}":
     exists: true
     groups:
-      - { { vector_group: !!null "" }: !!null "" }
+      - "{{ vector_group }}"
     shell: /usr/sbin/nologin
 group:
-  { { vector_group: !!null "" }: !!null "" }:
+  "{{ vector_group }}":
     exists: true
 
 command:

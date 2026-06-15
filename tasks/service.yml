@@ -8,7 +8,7 @@
     src: "{{ vector_service_template_path }}"
   notify:
     - Restart vector
-  # Separator for the pre-commit handler parser.
+# Separator for the pre-commit handler parser.
 - name: service | Configuring service
   ansible.builtin.systemd:
     daemon_reload: true
