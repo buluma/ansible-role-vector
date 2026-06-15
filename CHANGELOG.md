@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-vector/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v26.6.0...HEAD)
+
+**Closed issues:**
+
+- https://packages.timber.io is deprecated [\#20](https://github.com/buluma/ansible-role-vector/issues/20)
+
 ## [v26.6.0](https://github.com/buluma/ansible-role-vector/tree/v26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v24.3.31...v26.6.0)
