@@ -34,6 +34,7 @@
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#19](https://github.com/buluma/ansible-role-vector/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#18](https://github.com/buluma/ansible-role-vector/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#17](https://github.com/buluma/ansible-role-vector/pull/17) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Check that the vector binary exists [\#2](https://github.com/buluma/ansible-role-vector/pull/2) ([patsevanton](https://github.com/patsevanton))
 
 ## [v0.2.0](https://github.com/buluma/ansible-role-vector/tree/v0.2.0) (2024-01-28)
 
@@ -64,10 +65,6 @@
 ## [v0.1.3](https://github.com/buluma/ansible-role-vector/tree/v0.1.3) (2022-04-10)
 
 [Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v0.1.2...v0.1.3)
-
-**Merged pull requests:**
-
-- Check that the vector binary exists [\#2](https://github.com/buluma/ansible-role-vector/pull/2) ([patsevanton](https://github.com/patsevanton))
 
 ## [v0.1.2](https://github.com/buluma/ansible-role-vector/tree/v0.1.2) (2022-04-06)
 
