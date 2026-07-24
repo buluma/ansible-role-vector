@@ -9,4 +9,4 @@ vector_parser_config:
     parse_vrl: . = parse_grok!(.message, "%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} %{GREEDYDATA:message}")\n.new_field = "Value in fake
       field"\ndel(.level)\n.timestamp = to_timestamp!(.timestamp)
     path_log: /var/log/vector
-vector_version: "0.29.1"
+vector_version: "0.57.0"
