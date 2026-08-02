@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-vector/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v26.6.2...HEAD)
+
+**Merged pull requests:**
+
+- Bump release-drafter/release-drafter from 7 to 7.6.0 [\#34](https://github.com/buluma/ansible-role-vector/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v26.6.2](https://github.com/buluma/ansible-role-vector/tree/v26.6.2) (2026-07-24)
 
 [Full Changelog](https://github.com/buluma/ansible-role-vector/compare/v26.6.1...v26.6.2)
