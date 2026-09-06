@@ -49,8 +49,6 @@ jobs:
           - image: "docker-molecule-images"
             tag: "debian12"
           - image: "docker-molecule-images"
-            tag: "debian11"
-          - image: "docker-molecule-images"
             tag: "ubuntu2604"
           - image: "docker-molecule-images"
             tag: "ubuntu2404"
