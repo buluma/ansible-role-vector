@@ -90,7 +90,7 @@ vector_skeleton_paths: "{{ vector_skeleton_paths_base + vector_skeleton_paths_ex
 vector_skeleton_paths_base:
   - "{{ vector_config_path }}"
 vector_user: vector
-vector_version: "0.29.1"
+vector_version: "0.60.0"
 ```
 
 ## [Requirements](#requirements)
